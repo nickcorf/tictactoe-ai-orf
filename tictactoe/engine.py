@@ -16,7 +16,7 @@ class Engine:
                 beta: float) -> tuple:
         available_moves = board.empty_squares
         if len(available_moves) == board.size**2:
-            return 0, random.choice(list(range(board.size**2)))
+            return 0, board.size**2//2
         if board.is_gameover() or depth >= self.level:
             return self.evaluate_board(board, depth), None
 
